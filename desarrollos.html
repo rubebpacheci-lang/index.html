@@ -70,13 +70,80 @@ h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3vw,2.8rem);fo
 .mission-card.vision{border-top-color:rgba(212,160,23,.4)}
 .mission-label{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .mission-text{font-size:1.05rem;line-height:1.8;color:rgba(240,237,232,.75);font-weight:300;font-style:italic}
-@media(max-width:960px){.dev-section{padding:3rem 1.5rem}.dev-grid,.collab-grid,.mission-grid{grid-template-columns:1fr}}
+/* METODOLOGÍA */
+.met-intro{margin-bottom:3rem}
+.met-steps{display:flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.04)}
+.met-step{display:grid;grid-template-columns:100px 1fr;background:var(--navy2);transition:background .25s}
+.met-step:hover{background:var(--steel)}
+.met-step-num{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:900;color:rgba(212,160,23,.15);display:flex;align-items:flex-start;justify-content:center;padding:2.5rem 1rem}
+.met-step-body{padding:2.5rem 2.5rem 2.5rem 0;border-left:3px solid var(--gold)}
+.met-step-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:1rem}
+.met-step-icon{font-size:2rem;width:52px;height:52px;background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.met-step-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.met-step-title{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;text-transform:uppercase;line-height:1}
+.met-step-desc{font-size:.9rem;line-height:1.75;color:rgba(240,237,232,.6);font-weight:300;margin-bottom:1.4rem;max-width:700px}
+.met-step-items{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .5rem;margin-bottom:1.4rem}
+.met-item{font-size:.83rem;color:rgba(240,237,232,.7);padding:.4rem .8rem;background:rgba(255,255,255,.04);border-left:2px solid rgba(212,160,23,.3)}
+.met-step-output{display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.25);padding:.4rem 1rem;font-size:.78rem;color:var(--gold)}
+.met-step-output span{font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.met-banner{background:var(--gold);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-top:3rem;clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,16px 100%)}
+/* MISIÓN Y VISIÓN */
+.mv-hero{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3rem}
+.mv-hero-text p{margin-top:1rem;font-size:.95rem;font-weight:300;color:rgba(240,237,232,.6);line-height:1.8}
+.mv-hero-img{position:relative;height:340px;overflow:hidden}
+.mv-hero-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+.mv-hero-badge{position:absolute;bottom:1.5rem;left:1.5rem;background:var(--gold);padding:1rem 1.5rem}
+.mv-hero-badge strong{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:var(--navy);display:block;line-height:1}
+.mv-hero-badge span{font-size:.72rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.1em}
+.valores-title{margin:3rem 0 1.5rem}
+.valores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.04);margin-bottom:3rem}
+.valor-card{background:var(--navy2);padding:2rem;position:relative;overflow:hidden;transition:background .25s}
+.valor-card:hover{background:var(--steel)}
+.valor-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.valor-card:hover::after{transform:scaleX(1)}
+.valor-num{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:rgba(212,160,23,.12);line-height:1;margin-bottom:.5rem}
+.valor-icon{font-size:1.8rem;margin-bottom:.8rem}
+.valor-name{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:800;text-transform:uppercase;margin-bottom:.6rem}
+.valor-desc{font-size:.83rem;line-height:1.65;color:rgba(240,237,232,.5);font-weight:300;margin-bottom:.8rem}
+.valor-ejemplo{font-size:.75rem;font-weight:600;color:var(--gold);font-style:italic}
+.clientes-title{margin:3rem 0 1.5rem}
+.clientes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.04)}
+.cliente-card{background:var(--navy2);padding:2rem;text-align:center;transition:background .25s}
+.cliente-card:hover{background:var(--steel)}
+.cliente-icon{font-size:2.5rem;margin-bottom:1rem}
+.cliente-tipo{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.cliente-desc{font-size:.83rem;line-height:1.6;color:rgba(240,237,232,.5);font-weight:300}
+/* NORMATIVA */
+.norm-intro{margin-bottom:3rem}
+.norm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(255,255,255,.04);margin-bottom:3rem}
+.norm-card{background:var(--navy2);padding:2.5rem;transition:background .25s;position:relative}
+.norm-card:hover{background:var(--steel)}
+.norm-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem}
+.norm-badge{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem}
+.norm-badge.chile{background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.25);color:var(--gold)}
+.norm-badge.int{background:rgba(30,45,66,.8);border:1px solid rgba(140,149,160,.2);color:var(--grey)}
+.norm-area{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
+.norm-sigla{font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:.4rem}
+.norm-title{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;line-height:1.2;margin-bottom:.8rem}
+.norm-desc{font-size:.85rem;line-height:1.7;color:rgba(240,237,232,.5);font-weight:300;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.norm-aplica-title{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.norm-aplica-item{font-size:.83rem;color:rgba(240,237,232,.65);padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.norm-footer-banner{background:var(--steel);border-left:4px solid var(--gold);padding:2rem 2.5rem;display:flex;align-items:flex-start;gap:1.5rem}
+.norm-footer-icon{font-size:2.5rem;flex-shrink:0}
+@media(max-width:960px){
+  .dev-section{padding:3rem 1.5rem}
+  .dev-grid,.collab-grid,.mission-grid,.norm-grid{grid-template-columns:1fr}
+  .met-step{grid-template-columns:60px 1fr}.met-step-num{font-size:2.5rem;padding:2rem .5rem}
+  .met-step-items{grid-template-columns:1fr}.met-banner{flex-direction:column;clip-path:none}
+  .mv-hero{grid-template-columns:1fr}.mv-hero-img{height:220px}
+  .valores-grid,.clientes-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
 <div class="topbar"><div class="topbar-left">
   <div class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72c.13 1 .39 1.97.74 2.9a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z"/></svg>+56 9 8800 5493</div>
-  <div class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82e1edecf6e3e1f6edc2f2eaf0ebece5e7ecebe7f0ebe3ace1ee">[email&#160;protected]</a></div>
+  <div class="topbar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>contacto@phringenieria.cl</div>
 </div><div>Miguel Claro 119, Providencia, Santiago · RIC · SEC</div></div>
 <nav><a href="index.html" style="text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" class="logo-svg">
   <text x="4" y="42" font-family="Arial Black, sans-serif" font-weight="900" font-size="46" fill="#FFFFFF" letter-spacing="-1">PHR</text>
@@ -134,32 +201,123 @@ h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3vw,2.8rem);fo
 
   <!-- METODOLOGÍA -->
   <div class="tab-content" id="tab-metodologia">
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-year">ETAPA 01</div>
-        <div class="tl-title">Diagnóstico Técnico</div>
-        <div class="tl-desc">Evaluación del lugar, levantamiento de requerimientos, mediciones técnicas y análisis de infraestructura existente. Sin diagnóstico no hay diseño.</div>
+
+    <div class="met-intro">
+      <div class="sec-label">Cómo trabajamos</div>
+      <h2>Proceso <span>estructurado</span> en 4 etapas</h2>
+      <p style="margin-top:1rem;font-size:.95rem;font-weight:300;color:rgba(240,237,232,.6);max-width:620px;line-height:1.8">Cada proyecto PHR sigue una metodología clara y documentada. No improvisamos: cada etapa tiene entregables definidos, tiempos acordados y responsables identificados.</p>
+    </div>
+
+    <div class="met-steps">
+      <div class="met-step">
+        <div class="met-step-num">01</div>
+        <div class="met-step-body">
+          <div class="met-step-header">
+            <div class="met-step-icon">🔍</div>
+            <div>
+              <div class="met-step-label">Primera etapa</div>
+              <div class="met-step-title">Diagnóstico Técnico</div>
+            </div>
+          </div>
+          <div class="met-step-desc">Antes de proponer cualquier solución, visitamos el lugar, levantamos los requerimientos reales del cliente y realizamos mediciones técnicas. Analizamos la infraestructura existente para no diseñar en el aire.</div>
+          <div class="met-step-items">
+            <div class="met-item">📍 Visita técnica en terreno</div>
+            <div class="met-item">📋 Levantamiento de requerimientos</div>
+            <div class="met-item">📐 Mediciones y cálculos técnicos</div>
+            <div class="met-item">🔎 Análisis de infraestructura existente</div>
+          </div>
+          <div class="met-step-output"><span>Entregable:</span> Informe de diagnóstico técnico</div>
+        </div>
       </div>
-      <div class="tl-item">
-        <div class="tl-year">ETAPA 02</div>
-        <div class="tl-title">Diseño de Solución</div>
-        <div class="tl-desc">Diseño de arquitectura del sistema, selección de equipos, definición de materiales y planificación de instalación. Entregamos propuesta técnica documentada.</div>
+
+      <div class="met-step">
+        <div class="met-step-num">02</div>
+        <div class="met-step-body">
+          <div class="met-step-header">
+            <div class="met-step-icon">🖥️</div>
+            <div>
+              <div class="met-step-label">Segunda etapa</div>
+              <div class="met-step-title">Diseño de Solución</div>
+            </div>
+          </div>
+          <div class="met-step-desc">Con el diagnóstico en mano, diseñamos la arquitectura del sistema, seleccionamos los equipos más adecuados y definimos los materiales. El cliente recibe una propuesta técnica detallada antes de aprobar la ejecución.</div>
+          <div class="met-step-items">
+            <div class="met-item">🏗️ Diseño de arquitectura del sistema</div>
+            <div class="met-item">⚙️ Selección de equipos y tecnología</div>
+            <div class="met-item">📦 Definición de materiales</div>
+            <div class="met-item">📅 Planificación y cronograma</div>
+          </div>
+          <div class="met-step-output"><span>Entregable:</span> Propuesta técnica y presupuesto</div>
+        </div>
       </div>
-      <div class="tl-item">
-        <div class="tl-year">ETAPA 03</div>
-        <div class="tl-title">Implementación</div>
-        <div class="tl-desc">Instalación técnica, configuración de sistemas, pruebas de funcionamiento y verificación de estabilidad operativa. Ejecutado bajo normativa vigente.</div>
+
+      <div class="met-step">
+        <div class="met-step-num">03</div>
+        <div class="met-step-body">
+          <div class="met-step-header">
+            <div class="met-step-icon">🔧</div>
+            <div>
+              <div class="met-step-label">Tercera etapa</div>
+              <div class="met-step-title">Implementación</div>
+            </div>
+          </div>
+          <div class="met-step-desc">Ejecutamos la instalación con técnicos especializados, configuramos todos los sistemas y realizamos pruebas exhaustivas de funcionamiento. No damos el trabajo por terminado hasta verificar la estabilidad operativa completa.</div>
+          <div class="met-step-items">
+            <div class="met-item">🛠️ Instalación técnica en terreno</div>
+            <div class="met-item">💻 Configuración de sistemas y software</div>
+            <div class="met-item">✅ Pruebas de funcionamiento</div>
+            <div class="met-item">🔒 Verificación de estabilidad operativa</div>
+          </div>
+          <div class="met-step-output"><span>Entregable:</span> Sistema instalado y operativo</div>
+        </div>
       </div>
-      <div class="tl-item">
-        <div class="tl-year">ETAPA 04</div>
-        <div class="tl-title">Entrega y Soporte</div>
-        <div class="tl-desc">Documentación completa del sistema, capacitación básica de uso al cliente, soporte técnico post-instalación y planes de mantención preventiva y correctiva.</div>
+
+      <div class="met-step">
+        <div class="met-step-num">04</div>
+        <div class="met-step-body">
+          <div class="met-step-header">
+            <div class="met-step-icon">📚</div>
+            <div>
+              <div class="met-step-label">Cuarta etapa</div>
+              <div class="met-step-title">Entrega y Soporte</div>
+            </div>
+          </div>
+          <div class="met-step-desc">Entregamos documentación completa del sistema instalado, capacitamos al cliente en el uso básico y quedamos disponibles para soporte técnico. Ofrecemos planes de mantención preventiva y correctiva para asegurar la continuidad operativa.</div>
+          <div class="met-step-items">
+            <div class="met-item">📄 Documentación técnica completa</div>
+            <div class="met-item">🎓 Capacitación básica al cliente</div>
+            <div class="met-item">📞 Soporte técnico post-instalación</div>
+            <div class="met-item">🔄 Planes de mantención preventiva</div>
+          </div>
+          <div class="met-step-output"><span>Entregable:</span> Dossier técnico + plan de mantención</div>
+        </div>
       </div>
+    </div>
+
+    <div class="met-banner">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800;text-transform:uppercase;color:var(--navy)">¿Tienes un proyecto en mente?</div>
+        <div style="font-size:.9rem;color:rgba(15,25,35,.65);margin-top:.3rem">Contáctanos y comenzamos con el diagnóstico técnico sin compromiso.</div>
+      </div>
+      <button onclick="location.href='index.html#contacto'" style="background:var(--navy);color:var(--gold);border:none;padding:1rem 2.2rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 100%,8px 100%)">Solicitar diagnóstico →</button>
     </div>
   </div>
 
   <!-- MISIÓN Y VISIÓN -->
   <div class="tab-content" id="tab-mision">
+
+    <div class="mv-hero">
+      <div class="mv-hero-text">
+        <div class="sec-label">Quiénes somos</div>
+        <h2>Ingeniería con <span>propósito</span></h2>
+        <p>PHR Ingeniería SpA nace con el objetivo de llevar soluciones tecnológicas confiables y bien ejecutadas a proyectos residenciales, comerciales, comunitarios e institucionales en Chile. Trabajamos donde otros no llegan — desde Providencia hasta el Cajón del Maipo.</p>
+      </div>
+      <div class="mv-hero-img">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=700&q=80" alt="PHR Ingeniería equipo">
+        <div class="mv-hero-badge"><strong>PHR</strong><span>Providencia, Santiago</span></div>
+      </div>
+    </div>
+
     <div class="mission-grid">
       <div class="mission-card">
         <div class="mission-label">🎯 Misión</div>
@@ -170,21 +328,139 @@ h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3vw,2.8rem);fo
         <div class="mission-text">"Consolidarse como una empresa de ingeniería reconocida por su capacidad técnica, confiabilidad operativa y desarrollo de soluciones tecnológicas eficientes para clientes particulares, empresas y comunidades en Chile."</div>
       </div>
     </div>
-    <div class="dev-grid">
-      <div class="dev-card"><div class="dev-card-icon">🔒</div><div class="dev-card-type">Principio técnico</div><div class="dev-card-title">Confiabilidad</div><div class="dev-card-desc">Sistemas diseñados para operar de forma continua y estable, con protecciones adecuadas y componentes de calidad comprobada.</div></div>
-      <div class="dev-card"><div class="dev-card-icon">📈</div><div class="dev-card-type">Principio técnico</div><div class="dev-card-title">Escalabilidad</div><div class="dev-card-desc">Infraestructura preparada para futuras ampliaciones. Cada proyecto considera el crecimiento esperado del sistema a mediano y largo plazo.</div></div>
-      <div class="dev-card"><div class="dev-card-icon">🛡️</div><div class="dev-card-type">Principio técnico</div><div class="dev-card-title">Seguridad</div><div class="dev-card-desc">Protección eléctrica, protección de datos y estabilidad de red. Cumplimiento estricto de normativa técnica chilena e internacional.</div></div>
-      <div class="dev-card"><div class="dev-card-icon">💡</div><div class="dev-card-type">Principio técnico</div><div class="dev-card-title">Optimización de costos</div><div class="dev-card-desc">Uso de tecnologías eficientes sin comprometer el desempeño. Soluciones técnicamente correctas y económicamente viables para cada cliente.</div></div>
+
+    <div class="valores-title">
+      <div class="sec-label">Pilares de trabajo</div>
+      <h2>Nuestros <span>valores técnicos</span></h2>
+    </div>
+    <div class="valores-grid">
+      <div class="valor-card">
+        <div class="valor-num">01</div>
+        <div class="valor-icon">🔒</div>
+        <div class="valor-name">Confiabilidad</div>
+        <div class="valor-desc">Sistemas diseñados para operar de forma continua y estable. Usamos componentes de calidad comprobada y protecciones adecuadas para cada entorno.</div>
+        <div class="valor-ejemplo">→ Respaldo energético en sistemas críticos</div>
+      </div>
+      <div class="valor-card">
+        <div class="valor-num">02</div>
+        <div class="valor-icon">📈</div>
+        <div class="valor-name">Escalabilidad</div>
+        <div class="valor-desc">Cada proyecto se diseña pensando en el futuro. La infraestructura queda preparada para ampliar sin necesidad de reemplazar lo ya instalado.</div>
+        <div class="valor-ejemplo">→ Redes con capacidad de expansión desde el día 1</div>
+      </div>
+      <div class="valor-card">
+        <div class="valor-num">03</div>
+        <div class="valor-icon">🛡️</div>
+        <div class="valor-name">Seguridad</div>
+        <div class="valor-desc">Protección eléctrica, protección de datos y estabilidad de red. Cumplimiento estricto de normativa técnica chilena e internacional en cada instalación.</div>
+        <div class="valor-ejemplo">→ Normativa RIC, SEC e IEC aplicada en obra</div>
+      </div>
+      <div class="valor-card">
+        <div class="valor-num">04</div>
+        <div class="valor-icon">💡</div>
+        <div class="valor-name">Optimización</div>
+        <div class="valor-desc">Soluciones eficientes sin comprometer calidad. Seleccionamos la tecnología correcta para cada presupuesto y necesidad real del cliente.</div>
+        <div class="valor-ejemplo">→ Propuesta técnica ajustada a cada proyecto</div>
+      </div>
+    </div>
+
+    <div class="clientes-title">
+      <div class="sec-label">A quiénes servimos</div>
+      <h2>Nuestros <span>clientes</span></h2>
+    </div>
+    <div class="clientes-grid">
+      <div class="cliente-card"><div class="cliente-icon">🏠</div><div class="cliente-tipo">Particulares</div><div class="cliente-desc">Propietarios de viviendas y condominios que necesitan seguridad electrónica, instalaciones eléctricas o conectividad confiable.</div></div>
+      <div class="cliente-card"><div class="cliente-icon">🏢</div><div class="cliente-tipo">Empresas privadas</div><div class="cliente-desc">Pymes y empresas medianas que requieren infraestructura tecnológica robusta para sus operaciones.</div></div>
+      <div class="cliente-card"><div class="cliente-icon">🏘️</div><div class="cliente-tipo">Comunidades</div><div class="cliente-desc">Juntas de vecinos, condominios y comunidades rurales que buscan soluciones de seguridad y conectividad colectiva.</div></div>
+      <div class="cliente-card"><div class="cliente-icon">🏛️</div><div class="cliente-tipo">Entidades públicas</div><div class="cliente-desc">Organizaciones e instituciones públicas que necesitan proyectos técnicamente correctos y normativamente válidos.</div></div>
     </div>
   </div>
 
   <!-- NORMATIVA -->
   <div class="tab-content" id="tab-normativa">
-    <div class="dev-grid">
-      <div class="dev-card"><div class="dev-card-icon">📗</div><div class="dev-card-type">Ingeniería Eléctrica</div><div class="dev-card-title">Reglamento de Instalaciones de Consumo (RIC)</div><div class="dev-card-desc">Normativa chilena que regula las instalaciones eléctricas de consumo en baja tensión. Todos los proyectos eléctricos de PHR Ingeniería cumplen íntegramente el RIC vigente.</div><div class="dev-card-meta"><span class="dev-badge">Chile</span><span class="dev-badge">Baja tensión</span></div></div>
-      <div class="dev-card"><div class="dev-card-icon">📘</div><div class="dev-card-type">Ingeniería Eléctrica</div><div class="dev-card-title">Normas SEC (Superintendencia de Electricidad y Combustibles)</div><div class="dev-card-desc">Estándares técnicos y de seguridad definidos por la SEC para instalaciones eléctricas en Chile. Aplicados en todos los proyectos de instalación y diagnóstico eléctrico.</div><div class="dev-card-meta"><span class="dev-badge">Chile</span><span class="dev-badge">SEC</span></div></div>
-      <div class="dev-card"><div class="dev-card-icon">📙</div><div class="dev-card-type">Seguridad Electrónica</div><div class="dev-card-title">IEC 62676 — Sistemas de Videovigilancia</div><div class="dev-card-desc">Estándar internacional para sistemas de videovigilancia en aplicaciones de seguridad. Define requisitos técnicos para cámaras, grabación, transmisión y gestión de video.</div><div class="dev-card-meta"><span class="dev-badge">Internacional</span><span class="dev-badge">CCTV</span></div></div>
-      <div class="dev-card"><div class="dev-card-icon">📒</div><div class="dev-card-type">Redes y Datos</div><div class="dev-card-title">Buenas Prácticas IEC y Redes IP</div><div class="dev-card-desc">Aplicación de buenas prácticas internacionales IEC en diseño de redes, arquitecturas seguras de transmisión de datos y cableado estructurado para entornos críticos.</div><div class="dev-card-meta"><span class="dev-badge">IEC</span><span class="dev-badge">Redes IP</span></div></div>
+
+    <div class="norm-intro">
+      <div class="sec-label">Marco regulatorio</div>
+      <h2>Trabajamos bajo <span>normativa vigente</span></h2>
+      <p style="margin-top:1rem;font-size:.95rem;font-weight:300;color:rgba(240,237,232,.6);max-width:640px;line-height:1.8">Todos los proyectos de PHR Ingeniería se ejecutan cumpliendo la normativa técnica chilena e internacional aplicable. No es opcional — es parte de nuestra metodología.</p>
+    </div>
+
+    <div class="norm-grid">
+      <div class="norm-card">
+        <div class="norm-header">
+          <div class="norm-badge chile">🇨🇱 Chile</div>
+          <div class="norm-area">Ingeniería Eléctrica</div>
+        </div>
+        <div class="norm-sigla">RIC</div>
+        <div class="norm-title">Reglamento de Instalaciones de Consumo</div>
+        <div class="norm-desc">Normativa chilena que regula las instalaciones eléctricas de consumo en baja tensión. Define los requisitos técnicos y de seguridad para toda instalación eléctrica interior en Chile.</div>
+        <div class="norm-aplica">
+          <div class="norm-aplica-title">Aplicamos en:</div>
+          <div class="norm-aplica-item">✓ Diseño de tableros eléctricos</div>
+          <div class="norm-aplica-item">✓ Canalizaciones y conductores</div>
+          <div class="norm-aplica-item">✓ Sistemas de puesta a tierra</div>
+          <div class="norm-aplica-item">✓ Protecciones eléctricas (SPD, diferenciales)</div>
+        </div>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-header">
+          <div class="norm-badge chile">🇨🇱 Chile</div>
+          <div class="norm-area">Ingeniería Eléctrica</div>
+        </div>
+        <div class="norm-sigla">SEC</div>
+        <div class="norm-title">Normas Superintendencia de Electricidad y Combustibles</div>
+        <div class="norm-desc">Estándares técnicos y de seguridad definidos por la SEC para instalaciones eléctricas en el territorio chileno. Regulan la calidad, seguridad y condiciones de las instalaciones eléctricas.</div>
+        <div class="norm-aplica">
+          <div class="norm-aplica-title">Aplicamos en:</div>
+          <div class="norm-aplica-item">✓ Instalaciones eléctricas residenciales</div>
+          <div class="norm-aplica-item">✓ Proyectos comerciales e industriales</div>
+          <div class="norm-aplica-item">✓ Diagnóstico y mantención eléctrica</div>
+          <div class="norm-aplica-item">✓ Estudios de carga y consumo</div>
+        </div>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-header">
+          <div class="norm-badge int">🌐 Internacional</div>
+          <div class="norm-area">Seguridad Electrónica</div>
+        </div>
+        <div class="norm-sigla">IEC 62676</div>
+        <div class="norm-title">Sistemas de Videovigilancia para Seguridad</div>
+        <div class="norm-desc">Estándar internacional IEC para sistemas de videovigilancia en aplicaciones de seguridad. Define requisitos técnicos para cámaras, equipos de grabación, transmisión de señal y gestión de video.</div>
+        <div class="norm-aplica">
+          <div class="norm-aplica-title">Aplicamos en:</div>
+          <div class="norm-aplica-item">✓ Sistemas CCTV IP y analógicos</div>
+          <div class="norm-aplica-item">✓ Grabación NVR / DVR</div>
+          <div class="norm-aplica-item">✓ Transmisión y almacenamiento de video</div>
+          <div class="norm-aplica-item">✓ Redes de videovigilancia</div>
+        </div>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-header">
+          <div class="norm-badge int">🌐 Internacional</div>
+          <div class="norm-area">Redes y Telecomunicaciones</div>
+        </div>
+        <div class="norm-sigla">IEC / IP</div>
+        <div class="norm-title">Buenas Prácticas IEC y Redes IP</div>
+        <div class="norm-desc">Aplicación de buenas prácticas internacionales IEC en el diseño de redes de comunicación. Arquitecturas seguras de transmisión de datos, cableado estructurado y configuración de equipos para entornos críticos.</div>
+        <div class="norm-aplica">
+          <div class="norm-aplica-title">Aplicamos en:</div>
+          <div class="norm-aplica-item">✓ Cableado estructurado Cat5e / Cat6</div>
+          <div class="norm-aplica-item">✓ Redes de fibra óptica</div>
+          <div class="norm-aplica-item">✓ Configuración de switches y routers</div>
+          <div class="norm-aplica-item">✓ Redes inalámbricas punto a punto</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="norm-footer-banner">
+      <div class="norm-footer-icon">⚖️</div>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:800;text-transform:uppercase;margin-bottom:.4rem">Proyectos normativamente correctos</div>
+        <div style="font-size:.88rem;color:rgba(240,237,232,.6);font-weight:300;line-height:1.7">En PHR Ingeniería no ejecutamos proyectos que no cumplan la normativa técnica vigente. Esto protege al cliente, garantiza la seguridad de la instalación y asegura la validez legal del trabajo realizado.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -203,7 +479,7 @@ h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3vw,2.8rem);fo
     <h4>Contacto</h4>
     <p>📍 Miguel Claro 119, Providencia<br>Santiago, Chile</p>
     <p style="margin-top:.5rem">📞 +56 9 8800 5493</p>
-    <a href="/cdn-cgi/l/email-protection#b3d0dcddc7d2d0c7dcf3c3dbc1daddd4d6dddad6c1dad29dd0df">✉ <span class="__cf_email__" data-cfemail="f79498998396948398b7879f859e999092999e92859e96d9949b">[email&#160;protected]</span></a>
+    <a href="mailto:contacto@phringenieria.cl">✉ contacto@phringenieria.cl</a>
   </div>
   <div class="footer-col">
     <h4>Navegación</h4>
@@ -219,4 +495,12 @@ h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3vw,2.8rem);fo
   <p>Normativa RIC · SEC · IEC 62676</p>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5d
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.dev-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body></html>

@@ -127,7 +127,9 @@ h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3vw,2.8rem);fo
 </div>
 
 <script>
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTgHngD1NtFO7wEu9P97smJfi1_mq__4GStuUkqkmK1d2RfnKdjtgmsx5qCwufMMhFcAlK6C7Sxdu7s/pub?output=csv&gid=0";
+// Google Sheets JSON API — no CORS issues
+const SHEET_ID = "1vOtefKA7EkXBr29ZeONUVzX5nKUFeN5gPxR1I7XUWbY";
+const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=Proyectos&headers=1`;
 
 // Fallback projects from real PHR data
 const FALLBACK = [
@@ -165,26 +167,29 @@ function renderCards(data) {
   document.getElementById('loadingMsg').style.display = 'none';
 }
 
-function parseCSV(csv) {
-  const lines = csv.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.replace(/"/g,'').trim().toLowerCase());
-  return lines.slice(1).map(line => {
-    const vals = line.match(/(".*?"|[^,]+)/g) || [];
-    const obj = {};
-    headers.forEach((h,i) => obj[h] = (vals[i]||'').replace(/"/g,'').trim());
-    return obj;
-  }).filter(r => r.nombre || r.name);
-}
-
 async function loadProjects() {
   try {
     const res = await fetch(SHEET_URL);
-    if (!res.ok) throw new Error('no sheet');
-    const csv = await res.text();
-    const data = parseCSV(csv);
-    if (data.length === 0) throw new Error('empty');
+    if (!res.ok) throw new Error('no fetch');
+    let text = await res.text();
+    // Strip Google's JSONP wrapper: /*O_o*/
+google.visualization.Query.setResponse({...})
+    text = text.replace(/^.*?setResponse\(/, '').replace(/\);?\s*$/, '');
+    const json = JSON.parse(text);
+    const rows = json.table.rows;
+    const cols = json.table.cols.map(c => c.label.toLowerCase().trim());
+    if (!rows || rows.length === 0) throw new Error('empty');
+    const data = rows.map(row => {
+      const obj = {};
+      cols.forEach((col, i) => {
+        obj[col] = row.c[i] ? (row.c[i].v !== null ? String(row.c[i].v) : '') : '';
+      });
+      return obj;
+    }).filter(r => r.nombre && r.nombre.trim() !== '');
+    if (data.length === 0) throw new Error('no data');
     renderCards(data);
   } catch(e) {
+    console.warn('Sheets error:', e);
     renderCards(FALLBACK);
     document.getElementById('errorMsg').style.display = 'block';
   }
